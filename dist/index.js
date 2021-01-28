@@ -3634,11 +3634,12 @@ function run() {
                     removedFormatted = JSON.stringify(removed);
                     renamedFormatted = JSON.stringify(renamed);
                     addedModifiedFormatted = JSON.stringify(addedModified);
-		    fs.writeFileSync(`${process.env.HOME}/files.json`, allFormatted, 'utf-8');
-	            fs.writeFileSync(`${process.env.HOME}/home/files_added.json`, addedFormatted, 'utf-8');
-	            fs.writeFileSync(`${process.env.HOME}/home/files_modified.json`, modifiedFormatted, 'utf-8');
-	            fs.writeFileSync(`${process.env.HOME}/home/files_removed.json`, removedFormatted, 'utf-8');
-	            fs.writeFileSync(`${process.env.HOME}/home/files_renamed.json`, addedModifiedFormatted, 'utf-8');
+	            const filedir = os.homedir();
+		    fs.writeFileSync(`${filedir}/files.json`, allFormatted, 'utf-8');
+	            fs.writeFileSync(`${filedir}/files_added.json`, addedFormatted, 'utf-8');
+	            fs.writeFileSync(`${filedir}/files_modified.json`, modifiedFormatted, 'utf-8');
+	            fs.writeFileSync(`${filedir}/files_removed.json`, removedFormatted, 'utf-8');
+	            fs.writeFileSync(`${filedir}/files_renamed.json`, addedModifiedFormatted, 'utf-8');
                     break;
             }
             // Log the output values.
