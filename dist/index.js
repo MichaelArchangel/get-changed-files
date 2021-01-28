@@ -3634,11 +3634,11 @@ function run() {
                     removedFormatted = JSON.stringify(removed);
                     renamedFormatted = JSON.stringify(renamed);
                     addedModifiedFormatted = JSON.stringify(addedModified);
-		    fs.writeFileSync(`/github/home/files.json`, allFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home/files_added.json`, addedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home/files_modified.json`, modifiedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home/files_removed.json`, removedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home/files_renamed.json`, addedModifiedFormatted, 'utf-8');
+		    fs.writeFileSync(`${process.env.HOME}/files.json`, allFormatted, 'utf-8');
+	            fs.writeFileSync(`${process.env.HOME}/home/files_added.json`, addedFormatted, 'utf-8');
+	            fs.writeFileSync(`${process.env.HOME}/home/files_modified.json`, modifiedFormatted, 'utf-8');
+	            fs.writeFileSync(`${process.env.HOME}/home/files_removed.json`, removedFormatted, 'utf-8');
+	            fs.writeFileSync(`${process.env.HOME}/home/files_renamed.json`, addedModifiedFormatted, 'utf-8');
                     break;
             }
             // Log the output values.
@@ -3648,6 +3648,7 @@ function run() {
             core.info(`Removed: ${removedFormatted}`);
             core.info(`Renamed: ${renamedFormatted}`);
             core.info(`Added or modified: ${addedModifiedFormatted}`);
+	    core.info(`Path: ${process.env.HOME}`);
             // Set step output context.
             core.setOutput('all', allFormatted);
             core.setOutput('added', addedFormatted);
@@ -3655,6 +3656,7 @@ function run() {
             core.setOutput('removed', removedFormatted);
             core.setOutput('renamed', renamedFormatted);
             core.setOutput('added_modified', addedModifiedFormatted);
+	    core.setOutput('Path', process.env.HOME);
 	
 
             // For backwards-compatibility
