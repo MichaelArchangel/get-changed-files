@@ -3632,11 +3632,11 @@ function run() {
                     removedFormatted = JSON.stringify(removed);
                     renamedFormatted = JSON.stringify(renamed);
                     addedModifiedFormatted = JSON.stringify(addedModified);
-		    fs.writeFileSync(`/github/home//files.json`, allFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home//files_added.json`, addedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home//files_modified.json`, modifiedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home//files_removed.json`, removedFormatted, 'utf-8');
-	            fs.writeFileSync(`/github/home//files_renamed.json`, addedModifiedFormatted, 'utf-8');
+		    fs.writeFileSync(`/github/home/files.json`, allFormatted, 'utf-8');
+	            fs.writeFileSync(`/github/home/files_added.json`, addedFormatted, 'utf-8');
+	            fs.writeFileSync(`/github/home/files_modified.json`, modifiedFormatted, 'utf-8');
+	            fs.writeFileSync(`/github/home/files_removed.json`, removedFormatted, 'utf-8');
+	            fs.writeFileSync(`/github/home/files_renamed.json`, addedModifiedFormatted, 'utf-8');
                     break;
             }
             // Log the output values.
