@@ -3603,7 +3603,10 @@ function run() {
             }
             // Format the arrays of changed files.
 	    // External Dependencies
-	    const fs     = __webpack_require__(747);	
+	    
+	    const os = __webpack_require__(87);
+	    const fs = __webpack_require__(747);	
+		
             let allFormatted, addedFormatted, modifiedFormatted, removedFormatted, renamedFormatted, addedModifiedFormatted;
             switch (format) {
                 case 'space-delimited':
